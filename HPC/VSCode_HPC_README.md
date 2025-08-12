@@ -64,7 +64,7 @@ ssh nlt112@rocket.hpc.ncl.ac.uk
 ### 4. Mount Remote Filesystem
 
 ```bash
-sshfs nlt112@rocket.hpc.ncl.ac.uk:/mnt/storage/nobackup/proj/spnmmd ~/RemoteServer -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3
+sshfs nlt112@rocket.hpc.ncl.ac.uk:/mnt/storage/nobackup/proj/spnmmd ~/RemoteServer 
 ```
 
 ### 5. Open in VS Code
@@ -72,14 +72,6 @@ sshfs nlt112@rocket.hpc.ncl.ac.uk:/mnt/storage/nobackup/proj/spnmmd ~/RemoteServ
 ```bash
 code ~/RemoteServer
 ```
-
-## Configuration Options
-
-The mount command includes several important options:
-
-- `reconnect` - Automatically reconnect if connection is lost
-- `ServerAliveInterval=15` - Send keepalive messages every 15 seconds
-- `ServerAliveCountMax=3` - Maximum failed keepalive attempts before disconnect
 
 ## Usage Tips
 
@@ -110,7 +102,6 @@ The mount command includes several important options:
 ## Alternative Approaches
 
 If SSHFS doesn't work for your setup, consider:
-- VS Code Remote SSH extension (if permitted by your HPC system)
 - Terminal-based editors like vim/emacs on the remote system
 - File synchronization tools like rsync
 
